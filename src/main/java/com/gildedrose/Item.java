@@ -30,4 +30,12 @@ public class Item {
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
+
+    public void updateQuality() {
+        decreaseQuality(this);
+        sellIn -= 1;
+        if (sellIn < 0) {
+            decreaseQuality(this);
+        }
+    }
 }
