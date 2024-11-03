@@ -14,15 +14,14 @@ public class Item {
         this.quality = quality;
     }
 
-    static void decreaseQuality(Item item) {
-        if (item.quality > 0) {
-            item.quality -= 1;
+    protected void decreaseQuality() {
+        if (quality > 0) {
+            quality -= 1;
         }
     }
 
-    static void increaseQuality(Item item) {
-        if (item.quality < 50) {
-            item.quality += 1;
+    protected void increaseQuality() {
+        if (quality < 50) {quality += 1;
         }
     }
 
@@ -32,10 +31,10 @@ public class Item {
     }
 
     public void updateQuality() {
-        decreaseQuality(this);
+        this.decreaseQuality();
         sellIn -= 1;
         if (sellIn < 0) {
-            decreaseQuality(this);
+            this.decreaseQuality();
         }
     }
 }
