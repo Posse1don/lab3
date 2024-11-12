@@ -12,4 +12,5 @@ class GildedRose {
             item.updateQuality();
         }
     }
+
 }
